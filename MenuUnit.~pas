@@ -1,0 +1,50 @@
+unit MenuUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TMenu = class(TForm)
+    Play: TButton;
+    Rules: TButton;
+    Exit: TButton;
+    RecordTable: TButton;
+    procedure PlayClick(Sender: TObject);
+    procedure ExitClick(Sender: TObject);
+    procedure RulesClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Menu: TMenu;
+
+implementation
+
+uses PlayUnit,Unit1;
+
+{$R *.dfm}
+
+procedure TMenu.PlayClick(Sender: TObject);
+begin
+  PlayForm.Show;
+end;
+
+procedure TMenu.ExitClick(Sender: TObject);
+begin
+  Close;
+end;
+
+
+procedure TMenu.RulesClick(Sender: TObject);
+begin
+  RulesForm.Show;
+  Hide;
+end;
+
+end.
